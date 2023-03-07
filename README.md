@@ -1,4 +1,4 @@
-# PV Simulator Challenge
+# PV Simulator
 
 This is a python based Producer (Meter) and Consumer (PV Simulator) application that uses RabbitMQ as a messaging broker. 
 
@@ -22,8 +22,7 @@ is running on background.
 
 ## Choose your favorite IDE
 
-Unzip the zipped folder named as Homework. Open it on your favorite IDE, some famous IDEs for Python based
-applications are Visual Code studio and PyCharm. You can download it from the following URLs respectively.
+Open it on your favorite IDE, some famous IDEs for Python based applications are Visual Code studio and PyCharm. You can download it from the following URLs respectively.
 
 https://code.visualstudio.com/download
 
@@ -51,7 +50,7 @@ https://www.jetbrains.com/pycharm/download/
 
 ## How to execute application
 
-In order to run the application, go to root folder of Homework directory. Open a terminal from there and execute following commands,
+In order to run the application, go to root folder of the directory. Open a terminal from there and execute following commands,
 
 ```bash
 docker compose build
