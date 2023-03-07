@@ -1,0 +1,31 @@
+version: "3.0"
+services:
+
+  rabbitmq:
+    build: rabbitmq/.
+    ports: 
+        - "15672:15672"
+        - "5672:5672"
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost:15672"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+
+  meter:
+    build: ./meter
+    container_name: meter
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    links: 
+        - rabbitmq
+
+  pvsimulator:
+    build: ./pvsimulator
+    container_name: pvsimulator
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    links: 
+        - rabbitmq
