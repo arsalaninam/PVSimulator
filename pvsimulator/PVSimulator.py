@@ -7,10 +7,13 @@ def callback(ch, method, properties, body):
         pv_value = random.uniform(0.0,4.0)
         body = body.decode("utf-8")
         sum_of_meter_and_pv = pv_value+(int(body)/1000)
-        print(" [x] Received %r" % sum_of_meter_and_pv)
 
-        file.write("\nMeter Power value : " + str(body) + "\tPV Power value : " + str(pv_value) + 
-                   "\tSum of Powers : " + str(sum_of_meter_and_pv) + "\tTime Stamp " + str(datetime.datetime.now()) + "\n\n")
+        result=("Meter Power value : " + body + "\t||| PV Power value : " + str(pv_value) + 
+                   "\t||| Sum of Powers : " + str(sum_of_meter_and_pv) + "\t||| Time Stamp " + str(datetime.datetime.now()) + "\n\n")
+
+        print(result)
+        file.write(result)
+    
 
 def main():
 
